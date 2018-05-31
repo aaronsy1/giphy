@@ -7,6 +7,20 @@ function createBtn() {
     $('#gifButtons').prepend(newBtn);
 }
 
+function animateGif(){
+    $(".gif").on("click", function() {
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+  
+})
+}
+
 function populateGif() {
     
         $('.animeGif').on('click', function () {
@@ -20,9 +34,15 @@ function populateGif() {
                     for (var j = 0; j < 10; j++) {
                         gifDiv = $('<div>');
                         textDiv = $('<div>');
+                        var gif = $('<img>').attr('src', 'https://media3.giphy.com/media/' + resp.data.data[j].id + '/giphy_s.gif');
+                        $(gif).attr('data-still','https://media3.giphy.com/media/' + resp.data.data[j].id + '/giphy_s.gif');
+                        $(gif).attr('data-animate','https://media3.giphy.com/media/' + resp.data.data[j].id + '/giphy.gif');
+                        $(gif).attr('data-state','animate');
+                        $(gif).attr('class','gif');
 
-                        var gif = $('<img>').attr('src', 'https://media3.giphy.com/media/' + resp.data.data[j].id + '/giphy.gif');
+
                         $(gifDiv).append(gif);
+                        animateGif();
                         $(textDiv).append("rating: " + resp.data.data[j].rating);
                         $(gifDiv).prepend(textDiv);
                         $('#gifPopulation').prepend(gifDiv);
