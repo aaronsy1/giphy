@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Giphy API app</title>
     <!--Bootstrap-->
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"> -->
-    <!--hackertheme-->
-    <link rel="stylesheet" type="text/css" href="./bootstrap4-executive-suite.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
     <!--Personal CSS-->
     <link rel="stylesheet" type="text/css" href="./style.css">
 
@@ -16,23 +15,29 @@
 <body>
 
     <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="display-4">Giphy App</h1>
+            <p class="lead">This is a simple app demonstrating knowledge of API calls utilizing axios and the Giphy API</p>
+          </div>
+
         <!--row where buttons show up-->
-        <div class="row " id = "gifButtons">
+        <div class="row " id = "gifButtons" >
             
         </div>
 
-        <div class="row">
-            <div class="col-md-8" id = "gifPopulation">
-            </div>
+        <div class="row mt-3">
             <div class="col-md-4">
-                    <div class="card border-dark mb-3" style="max-width: 18rem;">
-                            <div class="card-header">Type in your favorite anime!</div>
-                            <div class="card-body text-dark">
-                                    <input class="form-control" type="text" id = "animeSearch" placeholder="ex. Naruto">
-                                    <button type="button" class="btn btn-primary" id = "submitBtn">Submit</button>
-                            </div>
-                          </div>
-            </div>
+                <div class="card border-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Type in your favorite anime!</div>
+                        <div class="card-body text-dark">
+                                <input class="form-control" type="text" id = "animeSearch" placeholder="ex. Naruto">
+                                <button type="button" class="btn btn-primary" id = "submitBtn">Submit</button>
+                        </div>
+                      </div>
+        </div>
+            <div class="col-md-8" id = "gifPopulation"></div>
+
         </div>
         
 
